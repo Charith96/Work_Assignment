@@ -5,20 +5,25 @@ const Member = require("../models/Member");
 
 router.post("/", async (req, res) => {
 
-    const { id, name, address, country, registerDate } = req.body;
+    const { name, address, country, registerDate } = req.body;
 
     let members;
     try {
 
-        members = await Member.find({ id: id }).count();
+        members = await Member.find({ 
+            $and: [
+                {name: name},
+                {address: address},
+                {country: country}
+            ]
+         }).count();
 
         //check whether member is already exist
         if (members > 0) {
-            return res.status(400).json({ message: "This id is already being use 🛑" });
+            return res.status(400).json({ message: "This member is already in the database 🛑" });
         }
 
         const member = new Member({
-            id:id,
             name: name,
             address: address,
             country: country,
@@ -61,7 +66,7 @@ router.get('/', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
 
-    const { id, name, address, country, registerDate } = req.body;
+    const { name, address, country, registerDate } = req.body;
 
     try {
         //get ObjectId
@@ -74,7 +79,6 @@ router.put('/:id', async (req, res) => {
         }
 
         const member = await Member.findByIdAndUpdate( member_id );
-        member.id = id;
         member.name = name;
         member.address = address;
         member.country = country;
