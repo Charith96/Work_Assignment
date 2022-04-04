@@ -62,7 +62,7 @@ This application has been developed using the MERN Stack to demonstrate crud ope
 
 ## Installation
 
-1.Open the project using code editor or command line
+1.Open the project using code editor or command prompt
 
 
 2.Install node package using npm both client and backend
