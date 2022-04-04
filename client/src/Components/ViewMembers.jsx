@@ -26,11 +26,11 @@ const ViewMembers = () => {
   const fetchData = async () => {
 
     try {
-      
+
       const response = await axios.get(`http://localhost:8010/v1/members/`);
       if (response.status === 200) {
         //initialized new values to fields 
-        setMembers(response.data.members)        
+        setMembers(response.data.members)
       };
 
     } catch (error) {
@@ -52,7 +52,7 @@ const ViewMembers = () => {
       .then((willDelete) => {
         if (willDelete) {
           axios.delete(`http://localhost:8010/v1/members/${id}`).then((res) => {
-            
+
             swl('Member successfully Deleted', {
               icon: "success",
             });
@@ -67,12 +67,14 @@ const ViewMembers = () => {
   return (
     <ThemeProvider breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}>
       <Container className='body-wrapper'>
+
+
         <div className='title'>
           <h1><span style={{ border: '2px solid gray' }} />&nbsp;All Members</h1>
         </div>
 
         <div className='button'>
-          <Link id='create' to="/member"><i class="fas fa-user-plus" />&nbsp;Add New Member</Link>
+          <Link id='create' to="/members"><i class="fas fa-user-plus" />&nbsp;Add New Member</Link>
         </div>
 
         <div className='content'>
@@ -93,7 +95,7 @@ const ViewMembers = () => {
                 <Col>{member.registerDate.substring(0, 10)}</Col>
                 <Col>
                   <Stack gap={2} className="col-md-5 mx-auto">
-                    <Link className='btn btn-warning' to={`/member/${member._id}`} id="actionButton"><i class="far fa-edit" />&nbsp;Update Member</Link>
+                    <Link className='btn btn-warning' to={`/members/${member._id}`} id="actionButton"><i class="far fa-edit" />&nbsp;Update Member</Link>
                     <Link className='btn btn-outline-danger' to='' onClick={() => deleteMember(member._id)} id="actionButton1"><i className="far fa-trash-alt" />&nbsp;Delete Member</Link>
                   </Stack>
                 </Col>
