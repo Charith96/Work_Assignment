@@ -31,13 +31,12 @@ app.listen(PORT, async () => {
             useNewUrlParser: true
         });
 
-        console.log("MonoDB successfully connected 🔥🟢");
+        console.log("MonoDB successfully connected 🔥🟢");        
+        console.log(`Server is running on port ${PORT}`);
 
     } catch (error) {
-        console.error("MongoDB connection error ", error);
+        console.error("MongoDB connection error, please try agin latter ❗");
     }
-
-    console.log(`Server is running on port ${PORT}`);
 })
 
 

@@ -9,8 +9,7 @@ import {
   Container,
   Row,
   Col,
-  Stack,
-  Button
+  Stack
 } from "react-bootstrap";
 
 
@@ -25,8 +24,18 @@ const ViewMembers = () => {
 
   //fetching all members data
   const fetchData = async () => {
-    const response = await axios.get(`http://localhost:8010/v1/members/`);
-    if (!response.data.error) setMembers(response.data.members);
+
+    try {
+      
+      const response = await axios.get(`http://localhost:8010/v1/members/`);
+      if (response.status === 200) {
+        //initialized new values to fields 
+        setMembers(response.data.members)        
+      };
+
+    } catch (error) {
+      toast(error.response.data.message, { type: toast.TYPE.ERROR });
+    }
   };
 
 
