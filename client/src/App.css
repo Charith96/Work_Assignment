@@ -1,0 +1,96 @@
+
+.body-wrapper{
+  margin: 80px 0px;
+}
+
+.title{
+  text-align: center;
+  margin: 100px 0px;
+}
+
+#create{
+  border-radius: 10px;
+  padding: 10px 20px;
+  background-color: cornflowerblue;
+  color: white;
+  text-decoration: none;
+}
+
+#create:hover{
+  margin-right: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  transition: all 0.5s ease-in-out;
+}
+
+.button{
+  display: flex;
+  justify-content: right;
+  margin-top: 100px;  
+}
+
+.content{
+  margin: 30px 0px;    
+  font-size: 18px;
+}
+
+.row-wrapper{
+  background-color: rgb(238, 238, 238);
+  border-top: 1px solid gray; 
+  border-bottom: 1px solid gray;
+  padding: 20px 0px;
+}
+
+.row-wrapper2{
+  border-bottom: 1px solid gray;
+  padding: 20px 0px;  
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.row-wrapper2:hover{
+  background-color: rgb(238, 238, 238);
+}
+
+#form{
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 50px;
+  border-radius: 20px;
+}
+
+.error{
+  color: red;
+  font-size: 16px;
+  margin-top: -10px;  
+}
+
+.Breadcrumb{
+  display: flex;
+  justify-content: left;
+}
+
+#actionButton{
+  min-width: 180px;
+  min-height: 50px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+#actionButton1{
+  min-width: 180px;
+  min-height: 50px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+}
+#actionButton1:hover{
+  color: white;
+}
